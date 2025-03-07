@@ -18,7 +18,14 @@ namespace Produto;
             Console.WriteLine(produto1.getDetailProduct());
             Console.WriteLine(produto2.getDetailProduct());
             Console.WriteLine(produto3.getDetailProduct());
+
+        Retangulo retangulo1= new Retangulo(3.00, 4.00);    
+        
+        Console.WriteLine(retangulo1.Area());
     }
+
+
+
     }
 
 
