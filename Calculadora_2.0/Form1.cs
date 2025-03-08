@@ -35,8 +35,7 @@ namespace Calculadora_2._0
         private void label2_Click_1(object sender, EventArgs e)
         {
 
-            label1.Text ={ textBox1.Text}
-            tenha um bom dia!";
+           
         }
 
         private void label4_Click(object sender, EventArgs e)

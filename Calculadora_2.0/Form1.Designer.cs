@@ -51,9 +51,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(151, 28);
+            label1.Font = new Font("Segoe UI", 20F);
+            label1.Location = new Point(151, 26);
             label1.Name = "label1";
-            label1.Size = new Size(70, 15);
+            label1.Size = new Size(158, 37);
             label1.TabIndex = 0;
             label1.Text = "Calculadora";
             label1.Click += label1_Click;
@@ -207,7 +208,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(80, 74);
+            textBox1.Location = new Point(80, 87);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(278, 23);
             textBox1.TabIndex = 22;
@@ -217,7 +218,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(402, 417);
             Controls.Add(textBox1);
             Controls.Add(button16);
             Controls.Add(button15);
