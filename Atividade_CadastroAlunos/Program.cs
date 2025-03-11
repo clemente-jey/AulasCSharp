@@ -1,65 +1,78 @@
-﻿using System.Data;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Atividade_CadastroAlunos
 {
     internal class Program
-
-        
     {
+        static List<Aluno> ListaAlunos = new List<Aluno>();
+
         static void Main(string[] args)
-
-
         {
-            
-            List<String> alunosList = new List<String>();
-            Console.WriteLine("Portal de Cadastro dos Alunos");
-            Console.WriteLine("");
-            Console.WriteLine("Para adicionar um cadastro digite 1, para visualizar os alunos já cadastrados digite 2");
-            String opcao = Console.ReadLine();
-
-            if (opcao == null) { 
-            Console.WriteLine("Opção inválida");
-            }
-            else if (opcao == "1")
+            while (true)
             {
-                Console.WriteLine("Digite o nome do aluno");
-                String nome = Console.ReadLine();
-                Console.WriteLine("Digite a matrícula do aluno");
-                int matricula = int.Parse(Console.ReadLine());
-                Console.WriteLine("Digite o curso do aluno");
-                string curso = Console.ReadLine();
-                Console.WriteLine("Digite o email do aluno");
-                string email = Console.ReadLine();
-                Console.WriteLine("Digite o telefone do aluno");
-                string telefone = Console.ReadLine();
+                Console.WriteLine("Portal de Cadastro dos Alunos");
+                Console.WriteLine("");
+                Console.WriteLine("Para adicionar um cadastro digite 1, para visualizar os alunos já cadastrados digite 2");
+                string opcao = Console.ReadLine();
 
-                Console.WriteLine("Confirme os dados cadastrados:");
-                Console.WriteLine($"Nome: {nome}Matricula: {matricula} Curso: {curso} Email: {email} Telefone: {telefone}");
-                Aluno aluno = new Aluno(nome, matricula, curso, email, telefone);
-                "Nome: {aluno.Nome}Matricula: {aluno.Matricula} Curso: {aluno.Curso} Email: {aluno.Email} Telefone: {aluno.Telefone}");
-                Console.WriteLine("Confirmar cadastro? (S/N)");
-
-                if (Console.ReadLine().ToUpper() == "S")
+                if (string.IsNullOrEmpty(opcao))
                 {
-                    alunosList.Add(aluno);
-                    Console.WriteLine("Cadastro realizado com sucesso, para voltar ao inicio digiti 1");
-                    string opcao2 = Console.ReadLine();
+                    Console.WriteLine("Opção inválida");
+                    continue;
                 }
-                else
-                {
-                    Console.WriteLine("Cadastro cancelado, para voltar ao inicio digite 1.");
-                }   string opcao2 = Console.ReadLine();
 
+                switch (opcao)
+                {
+                    case "1":
+                        AdicionarAluno();
+                        break;
+                    case "2":
+                        VisualizarAlunos();
+                        break;
+                    default:
+                        Console.WriteLine("Opção inválida");
+                        break;
+                }
             }
-            }
-            else if (opcao == "2")
+        }
+
+        static void AdicionarAluno()
+        {
+            Console.WriteLine("Digite o nome do aluno");
+            string nome = Console.ReadLine();
+            Console.WriteLine("Digite a matrícula do aluno");
+            string matricula = Console.ReadLine();
+            Console.WriteLine("Digite o curso do aluno");
+            string curso = Console.ReadLine();
+            Console.WriteLine("Digite o email do aluno");
+            string email = Console.ReadLine();
+            Console.WriteLine("Digite o telefone do aluno");
+            string telefone = Console.ReadLine();
+
+            Console.WriteLine("Confirme os dados cadastrados:");
+            Console.WriteLine($"Nome: {nome} Matrícula: {matricula} Curso: {curso} Email: {email} Telefone: {telefone}");
+            Aluno novoAluno = new Aluno(nome, matricula, curso, email, telefone);
+
+            Console.WriteLine("Confirmar cadastro? (S/N)");
+            string confirmacao = Console.ReadLine();
+            if (confirmacao.ToUpper() == "S")
             {
-                Console.WriteLine("Alunos cadastrados: ");
-                Console.WriteLine();
+                ListaAlunos.Add(novoAluno);
+                Console.WriteLine("Cadastro realizado com sucesso.");
             }
             else
             {
-                Console.WriteLine("Opção inválida");
+                Console.WriteLine("Cadastro cancelado.");
+            }
+        }
+
+        static void VisualizarAlunos()
+        {
+            Console.WriteLine("Alunos cadastrados: ");
+            foreach (Aluno aluno in ListaAlunos)
+            {
+                Console.WriteLine($"Nome: {aluno.Nome} Matrícula: {aluno.Matricula} Curso: {aluno.Curso} Email: {aluno.Email} Telefone: {aluno.Telefone}");
             }
         }
     }

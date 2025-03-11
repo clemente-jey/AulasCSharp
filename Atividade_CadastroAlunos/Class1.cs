@@ -10,12 +10,12 @@ namespace Atividade_CadastroAlunos
     {
 
         public string Nome;
-        public int Matricula;
+        public string Matricula;
         public string Curso;
         public string Email;
         public string Telefone;
 
-        public Aluno(string nome, int matricula, string curso, string email, string telefone)
+        public Aluno(string nome, string matricula, string curso, string email, string telefone)
         {
             Nome = nome;
             Matricula = matricula;
