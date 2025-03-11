@@ -25,18 +25,20 @@ internal class Program
         Console.WriteLine(conta_corrente1.getDetailAccount());
         double opcao;
 
-        do
+        //do
         {
             Console.WriteLine("Insira a opção que deseja: \n1. Consultar saldo.\n2. Realizar depósito.\n3. Realizar saque.\n4. Encerrar atendimento");
             opcao = double.Parse(Console.ReadLine());
 
         }
-        while (opcao != 4);
-        Console.WriteLine("Atendimento encerrado, obrigado por utilizar nossos serviços");
+        //while (opcao != 4);
+        //Console.WriteLine("Atendimento encerrado, obrigado por utilizar nossos serviços");
 
         if (opcao == 1)
         {
             Console.WriteLine(conta_corrente1.ExibirSaldo());
+            Console.WriteLine("Insira a opção que deseja: \n1. Consultar saldo.\n2. Realizar depósito.\n3. Realizar saque.\n4. Encerrar atendimento");
+            opcao = double.Parse(Console.ReadLine());
         }
 
 
@@ -45,12 +47,16 @@ internal class Program
             Console.WriteLine("Insira o valor do depósito: ");
             double deposito = double.Parse(Console.ReadLine());
             Console.WriteLine(conta_corrente1.Depositar(deposito));
+            Console.WriteLine("Insira a opção que deseja: \n1. Consultar saldo.\n2. Realizar depósito.\n3. Realizar saque.\n4. Encerrar atendimento");
+            opcao = double.Parse(Console.ReadLine());
         }
         if (opcao == 3);
         {
             Console.WriteLine("Insira o valor do saque: ");
             double saque = double.Parse(Console.ReadLine());
             Console.WriteLine(conta_corrente1.Sacar(saque));
+            Console.WriteLine("Insira a opção que deseja: \n1. Consultar saldo.\n2. Realizar depósito.\n3. Realizar saque.\n4. Encerrar atendimento");
+            opcao = double.Parse(Console.ReadLine());
         }
         
 
