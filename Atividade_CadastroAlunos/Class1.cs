@@ -23,5 +23,16 @@ namespace Atividade_CadastroAlunos
             Email = email;
             Telefone = telefone;
         }
+
+        public static void VisualizarAlunos(List<Aluno> listaAlunos)
+        {
+            Console.WriteLine("Alunos cadastrados: ");
+            foreach (Aluno aluno in listaAlunos)
+            {
+                Console.WriteLine($"Nome: {aluno.Nome} Matrícula: {aluno.Matricula} Curso: {aluno.Curso} Email: {aluno.Email} Telefone: {aluno.Telefone}");
+            }
+        }
+
+
     }
 }

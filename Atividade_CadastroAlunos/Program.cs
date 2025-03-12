@@ -15,7 +15,7 @@ namespace Atividade_CadastroAlunos
                 Console.WriteLine("");
                 Console.WriteLine("Para adicionar um cadastro digite 1, para visualizar os alunos já cadastrados digite 2");
                 string opcao = Console.ReadLine();
-
+                
                 if (string.IsNullOrEmpty(opcao))
                 {
                     Console.WriteLine("Opção inválida");
@@ -28,7 +28,7 @@ namespace Atividade_CadastroAlunos
                         AdicionarAluno();
                         break;
                     case "2":
-                        VisualizarAlunos();
+                        Aluno.VisualizarAlunos(ListaAlunos);
                         break;
                     default:
                         Console.WriteLine("Opção inválida");
@@ -36,7 +36,6 @@ namespace Atividade_CadastroAlunos
                 }
             }
         }
-
         static void AdicionarAluno()
         {
             Console.WriteLine("Digite o nome do aluno");
@@ -66,14 +65,8 @@ namespace Atividade_CadastroAlunos
                 Console.WriteLine("Cadastro cancelado.");
             }
         }
+        
 
-        static void VisualizarAlunos()
-        {
-            Console.WriteLine("Alunos cadastrados: ");
-            foreach (Aluno aluno in ListaAlunos)
-            {
-                Console.WriteLine($"Nome: {aluno.Nome} Matrícula: {aluno.Matricula} Curso: {aluno.Curso} Email: {aluno.Email} Telefone: {aluno.Telefone}");
-            }
-        }
+        
     }
 }
