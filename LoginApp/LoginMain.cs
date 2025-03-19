@@ -15,6 +15,27 @@ namespace LoginApp
         public LoginMain()
         {
             InitializeComponent();
+            this.FormClosing += ApplicationClose;
+        }
+
+        private void LoginMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ApplicationClose(object sender, FormClosingEventArgs evento)
+        {
+
+            DialogResult resultadoAcao = MessageBox.Show("Deseja realmente sair?", "Sair", MessageBoxButtons.YesNo);
+
+            if (resultadoAcao == DialogResult.No)
+            {
+                evento.Cancel = true;
+            }
+            else
+            {
+                Application.Exit();
+            }
         }
     }
 }
