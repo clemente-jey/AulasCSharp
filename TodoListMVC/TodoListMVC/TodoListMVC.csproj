@@ -58,6 +58,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\TarefaService.cs" />
     <Compile Include="Controller\TodoController.cs" />
+    <EmbeddedResource Include="FormTodoList.resx">
+      <DependentUpon>FormTodoList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
